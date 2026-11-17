@@ -1,0 +1,39 @@
+dataset:
+  id: "nthakur/mirage-bench-pairwise-judgments"
+  repository: "https://github.com/vectara/mirage-bench"
+  primary_language: "en"
+  split: "dev"
+  multilingual_languages:
+    - ar
+    - bn
+    - de
+    - en
+    - es
+    - fa
+    - fi
+    - fr
+    - hi
+    - id
+    - ja
+    - ko
+    - ru
+    - sw
+    - te
+    - th
+    - yo
+    - zh
+
+evaluation:
+  required_columns: ["query_id", "model_A", "model_B", "verdict"]
+  valid_verdicts: ["A", "B", "Tie"]
+  tie_weight: 0.5
+  sample_fractions: [0.25, 0.50, 0.75, 1.00]
+  n_repeats: 100
+  n_bootstraps: 100
+  min_common_models_cross_lingual: 3
+
+seeds:
+  global_seed: 42
+  bootstrap_seed: 42
+  subsample_seed: 42
+  individual_rank_seed: 123
